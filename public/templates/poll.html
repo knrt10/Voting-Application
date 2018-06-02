@@ -1,0 +1,25 @@
+<h3>{{vm.title}}   <button class="btn btn-danger" ng-click="vm.logOut();" style="float:right; clear:right; ">Logout</button></h3>
+<hr>
+
+<a class="btn btn-success" ng-href="http://twitter.com/share?url={{vm.link}}">Share </a>
+<h1  style="float:right;clear:right;"><a href="/polls"> Polls Page</a></h1><br>
+<h1  style="float:right;clear:right;"><a href="/profile"> Profile Page</a></h1>
+<h1 class="text-center">{{vm.message}}</h1>
+<br>
+<br><br>
+<hr>
+<div id="piechart" style="width: 1141px; height: 500px;"></div>
+<hr>    
+Poll created by : {{vm.user.data.name}}
+<hr>		
+<h2>Select options from below to add Vote </h2>
+<div class="form-group">
+	<select ng-model="vm.selected" class="form-control" >
+		<option ng-repeat="option in vm.poll" value="{{option._id}}" >{{option.name}}</option>
+	</select>
+</div>
+<h3>You can also add options here also , type in input box , press Add option and then refresh your browser</h3>
+<input type="text" ng-model="vm.option" class="form-control" placeholder="Add option">
+<button ng-click="vm.addOption();" class="btn btn-primary btn-block" ng-disabled="!vm.option">Add option</button>
+<br><br>
+<button ng-click="vm.vote();" class="btn btn-success btn-block" >Vote</button>

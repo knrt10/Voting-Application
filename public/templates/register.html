@@ -1,0 +1,23 @@
+<h3>{{vm.title}}</h3>
+<hr>
+    <h4 ng-if="vm.error">{{vm.error}}</h4>
+
+<br/>
+<input type="text" ng-model="vm.user.name" placeholder="Enter Username" class="form-control" />
+<br/>
+<input type="password" placeholder="Enter Password" class="form-control" ng-model="vm.user.password"/>
+<br/>
+<button class="btn btn-lg btn-success" ng-click="vm.register()" ng-disabled="!vm.user.name || !vm.user.password">Register!!</button>
+
+<hr>
+
+<h3>About Privacy</h3>
+<hr>
+<i> Relax !! <span id="a">Password is encrypted</span> so no need to worry ..</i>
+<hr>
+
+<style type="text/css">
+    #a{
+    font-weight:bold;
+    }
+</style>

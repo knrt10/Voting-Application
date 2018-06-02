@@ -1,0 +1,46 @@
+<h3>{{vm.title}}  <button class="btn btn-danger" ng-click="vm.logOut();" style="float:right; clear:right; ">Logout</button></h3>
+
+<hr>
+<input type="text" ng-model="vm.poll.name" placeholder="Enter Your Question For poll" class="form-control"/>
+<hr>
+ <input type="text" ng-model="vm.poll.options[$index].name" ng-repeat = "option in vm.poll.options" placeholder="Enter Options to your Poll or click Add Option to add more option for your poll" class='form-control'/>
+    
+<hr>
+<button class="btn btn-primary btn-lg " ng-click="vm.addOption()">Add Option</button>
+<br>
+<br>
+<h3 class="text-center">{{vm.message}}</h3>
+<br>
+<button class="btn btn-success btn-lg " ng-click="vm.addPoll()" ng-disabled="!vm.poll.name ">Add Your Poll</button>
+<h1 style="float:right;clear:right;"><a href = "/profile">Profile Page</a></h1>
+<hr>
+<h3>Below are all polls till Now , You can click and see them</h3>
+<hr>
+
+<input type="text" class="form-control" ng-model="searchbox" placeholder="Search Polls">
+<ul>
+    <li ng-repeat="poll in vm.polls | filter : searchbox">
+       <a href="/polls/{{poll._id}}">
+        {{poll.name}}
+       </a>
+    </li>
+</ul>
+<style type="text/css">
+ ul{
+  list-style-type:none;
+}
+
+ul li{
+  padding:20px;
+  background-color:grey;;
+  margin:10px;
+  font-size:25px;
+  opacity:0.5;
+}
+ul li a{
+  color:red;
+}
+a:hover{
+ color:black;
+}
+</style>

@@ -1,0 +1,37 @@
+{
+  "name": "voting app",
+  "version": "1.0.1",
+  "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    
+  },
+  "keywords": [
+    "MongoDB",
+    "Mongoose",
+    "full stack",
+    "Express",
+    "Node",
+    "javascript",
+    "boilerplate"
+  ],
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "KNRT",
+  "license": "MIT",
+  "dependencies": {
+    "angular-jwt": "^0.1.9",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "dotenv": "^1.2.0",
+    "express": "^4.12.4",
+    "express-session": "^1.11.3",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.1.0",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.0",
+    "passport-github": "^1.0.0"
+  }
+}

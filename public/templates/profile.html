@@ -1,0 +1,49 @@
+<h3>{{vm.title}}</h3>
+<hr>
+<h1 class="text-center">{{vm.message}}</h1>
+
+<button class="btn btn-danger" ng-click="vm.logOut();" ng-if="vm.currentUser" style="float:right; clear:right;">Logout</button>
+<br>    
+<h3 ng-if="vm.currentUser">Welcome back, {{vm.currentUser.name}}</h3>
+<hr>   
+<h1  style="float:right;"><a href="/polls">Click to go to Polls Page</a></h1>
+<h3 ng-if="vm.polls.length > 0">Your Polls</h3>
+<br><br>
+<hr>
+<br><br>
+<br>
+<ul>
+    <li ng-repeat="poll in vm.polls">
+        Poll Name: {{poll.name}} 
+        <a href="/polls/{{poll._id}}" class="btn btn-danger btn-lg" >View</a>
+        <div ng-repeat="option in poll.options">
+            Option: {{option.name}}
+            Votes: {{option.votes}}
+        </div>
+    </li>
+</ul>
+
+<hr>
+
+
+<style type="text/css">
+ ul{
+  list-style-type:none;
+  
+
+}
+
+ul li{
+  padding:20px;
+  background-color:grey;;
+  margin:10px;
+  font-size:25px;
+  opacity:0.5;
+}
+ul li a{
+  color:red;
+}
+a:hover{
+ color:black;
+}
+</style>
